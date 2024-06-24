@@ -1,9 +1,4 @@
 return {
-  dev = {
-    path = "/home/gale/workspace/my-projects/neovim/",
-    patterns = { "mgastonportillo" },
-    fallback = true,
-  },
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
   ui = {
