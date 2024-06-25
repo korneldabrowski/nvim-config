@@ -18,9 +18,10 @@ return {
       "gopls",
       "jsonls",
       "marksman",
-      -- "tailwindcss",
+      "tailwindcss",
       "pyright",
       "taplo",
+      "templ",
     }
 
     for _, lsp in ipairs(servers) do
@@ -35,7 +36,7 @@ return {
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         -- Disable hover in favour of Pyright
-        client.server_capabilities.hoverProvider = false
+        client.server_capabilities.hoverProvider = true
       end,
       on_init = on_init,
       capabilities = capabilities,

@@ -7,8 +7,8 @@ local M = {}
 
 M.ui = {
   transparency = true,
-  theme = "bearded-arc",
-  theme_toggle = { "bearded-arc", "chadracula-evondev" },
+  theme = "monekai",
+  theme_toggle = { "monekai", "chadracula-evondev" },
 
   statusline = {
     theme = "vscode_colored",
