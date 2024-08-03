@@ -121,3 +121,6 @@ end, { desc = "Buffer close" })
 for i = 1, 9 do
   map("n", "<A-" .. i .. ">", i .. "gt", { desc = "Tab go to tab " .. i })
 end
+
+-- my custom mappings
+vim.api.nvim_set_keymap("i", "<C-x>", 'copilot#Accept("") . ""', { expr = true, silent = true })

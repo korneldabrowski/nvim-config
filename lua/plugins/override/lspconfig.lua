@@ -8,6 +8,14 @@ return {
     local on_init = require("nvchad.configs.lspconfig").on_init
     local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+    -- Bind the custom go_to_definition function to a key
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>gd",
+      '<cmd>lua require("gale.custom_functions").go_to_definition()<CR>',
+      { noremap = true, silent = true }
+    )
+
     local servers = {
       "astro",
       "bashls",
@@ -19,9 +27,12 @@ return {
       "jsonls",
       "marksman",
       "tailwindcss",
+      -- "tailwindcss-language-server",
       "pyright",
       "taplo",
       "templ",
+      "bashls",
+      "kotlin_language_server",
     }
 
     for _, lsp in ipairs(servers) do

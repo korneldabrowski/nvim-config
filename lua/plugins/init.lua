@@ -43,6 +43,7 @@ return {
   { import = "plugins.spec.undo-tree" },
   { import = "plugins.spec.vim-astro" },
   { import = "plugins.spec.zen-mode" },
+  { import = "plugins.spec.myCopilot" },
   { import = "plugins.override.blankline" },
   { import = "plugins.override.cmp" },
   { import = "plugins.override.comment" },

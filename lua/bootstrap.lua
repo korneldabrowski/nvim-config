@@ -44,3 +44,13 @@ end
 
 -- No dashboard for me
 vim.api.nvim_del_user_command "Nvdash"
+
+vim.api.nvim_exec(
+  [[
+  augroup FileTypeTmux
+    autocmd!
+    autocmd BufRead,BufNewFile *.tmux.conf set filetype=sh
+  augroup END
+]],
+  false
+)
