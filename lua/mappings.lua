@@ -16,7 +16,6 @@ map("v", "y", "ygv<Esc>", { desc = "Yank preventing cursor from jumping back to 
 map("n", "<leader>ol", function()
   vim.ui.open(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p:h"))
 end, { desc = "Open file location in file explorer" })
-
 -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
 map("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
 map("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
@@ -124,3 +123,11 @@ end
 
 -- my custom mappings
 vim.api.nvim_set_keymap("i", "<C-x>", 'copilot#Accept("") . ""', { expr = true, silent = true })
+
+-- nvim-tmux-navigator
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft <CR>", { desc = "Tmux navigate left" })
+map("n", "<C-j>", "<cmd> TmuxNavigateDown <CR>", { desc = "Tmux navigate down" })
+map("n", "<C-k>", "<cmd> TmuxNavigateUp <CR>", { desc = "Tmux navigate up" })
+map("n", "<C-l>", "<cmd> TmuxNavigateRight <CR>", { desc = "Tmux navigate right" })
+
+vim.api.nvim_set_keymap("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })

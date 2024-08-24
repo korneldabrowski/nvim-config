@@ -35,7 +35,13 @@ return {
     nvtree.setup {
       on_attach = custom_on_attach,
       sync_root_with_cwd = true,
-      filters = { custom = { "^.git$" } },
+      filters = {
+        custom = {
+          "^.git$", -- Hide .git folder
+          "templ.go$", -- Hide files ending with _templ.go
+          "templ.txt$", -- Hide files ending with _templ.txt
+        },
+      },
       git = { enable = true },
       renderer = {
         highlight_git = true,
